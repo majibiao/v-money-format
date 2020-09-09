@@ -2,12 +2,13 @@
   <input type="text"
     :value="formattedValue"
     @change="change"
-    v-money-format="{precision}"
+    v-money-format="{precision, thousands}"
+    :disabled="disabled"
     />
 </template>
 
 <script>
-import money from './directive'
+import moneyFormat from './directive'
 import defaults from './options'
 
 export default {
@@ -16,19 +17,23 @@ export default {
     value: {
       required: true,
       type: [Number, String],
-      default: 0
+      default: ''
     },
-    masked: {
+    disabled: {
       type: Boolean,
       default: false
     },
     precision: {
       type: Number,
       default: () => defaults.precision
+    },
+    thousands: {
+      type: String,
+      default: ','
     }
   },
 
-  directives: {money},
+  directives: { moneyFormat },
 
   data () {
     return {
@@ -40,7 +45,6 @@ export default {
     value: {
       immediate: true,
       handler (nv) {
-        console.log(nv)
         if (nv !== this.formattedValue) {
           this.formattedValue = nv
         }
@@ -50,8 +54,6 @@ export default {
 
   methods: {
     change (evt) {
-      console.log(evt)
-      console.log(typeof evt.target.value)
       this.$emit('input', evt.target.value)
     }
   }

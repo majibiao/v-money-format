@@ -1,4 +1,4 @@
-import MoneyFormat from './component'
+import MoneyFormat from './component.vue'
 import VMoneyFormat from './directive'
 import options from './options'
 

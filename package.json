@@ -1,16 +1,21 @@
 {
-  "name": "v-money-format",
-  "version": "0.0.0",
-  "description": "Implement a Vue custom directive with format amount format(实现一个Vue的自定义金额指令)",
-  "main": "index.js",
+  "name": "v-money-format-v",
+  "version": "0.2.0",
+  "description": "实现一个Vue的自定义金额格式化组件和指令，组件名：money-format;指令名：v-money-format",
+  "main": "dist/v-money-format.umd.min.js",
+  "files": [
+    "dist/v-money-format.umd.min.js",
+    "package.json",
+    "README.md"
+  ],
   "scripts": {
     "test": "test",
     "dev": "vue serve test.vue",
-    "build": "vue build index.js"
+    "build": "vue build --target lib --name v-money-format ./src/index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/majibiao/v-money-format.git"
+    "url": "https://github.com/majibiao/v-money-format"
   },
   "keywords": [
     "vue",
@@ -23,8 +28,5 @@
   "bugs": {
     "url": "https://github.com/majibiao/v-money-format/issues"
   },
-  "homepage": "https://github.com/majibiao/v-money-format#readme",
-  "publishConfig": { 
-    "registry": "https://npm.pkg.github.com/@majibiao" 
-  }
+  "homepage": "https://github.com/majibiao/v-money-format#readme"
 }
