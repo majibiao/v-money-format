@@ -1,6 +1,6 @@
 {
   "name": "v-money-format-v",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "实现一个Vue的自定义金额格式化组件和指令，组件名：money-format;指令名：v-money-format",
   "main": "dist/v-money-format.umd.min.js",
   "files": [

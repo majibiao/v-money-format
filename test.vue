@@ -1,9 +1,9 @@
 <template>
   <div class="container">
     <hr>
-    组件：<money-format v-model.lazy="compVal" :config="config"></money-format>
+    组件：<money-format v-model.lazy="compVal" :config="compConfig"></money-format>
     <hr>
-    指令：<input type="text" v-model.lazy="directiveVal" v-money-format />
+    指令：<input type="text" v-model.lazy="directiveVal" v-money-format="directiveConfig" />
     <hr>
     <button @click="show">展示</button>
   </div>
@@ -14,14 +14,15 @@ import Vue from 'vue'
 import vMoneyFormat from './src/index'
 import MoneyFormat from './src/component'
 
-Vue.use(vMoneyFormat, { precision: 2, thousands: ',' })
+Vue.use(vMoneyFormat)
 
 export default {
   data () {
     return {
       compVal: 374924.23,
       directiveVal: 12342.34,
-      config: { precision: 2, thousands: ',' }
+      compConfig: { precision: 2, thousands: ',' },
+      directiveConfig: { precision: 2, thousands: '*' }
     }
   },
   methods: {

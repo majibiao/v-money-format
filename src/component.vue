@@ -2,14 +2,14 @@
   <input type="text"
     :value="formattedValue"
     @change="change"
-    v-money-format="{precision, thousands}"
+    v-money-format="config"
     :disabled="disabled"
     />
 </template>
 
 <script>
 import moneyFormat from './directive'
-import defaults from './options'
+// import defaults from './options'
 
 export default {
   name: 'Money-Format',
@@ -23,13 +23,11 @@ export default {
       type: Boolean,
       default: false
     },
-    precision: {
-      type: Number,
-      default: () => defaults.precision
-    },
-    thousands: {
-      type: String,
-      default: ','
+    config: {
+      type: Object,
+      default: () => {
+        return { precision: 2, thousands: ',' }
+      }
     }
   },
 

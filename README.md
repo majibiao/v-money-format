@@ -14,7 +14,7 @@
 import Vue from 'vue'
 import moneyFormat from 'v-money-format-v'
 
-// register directive v-money-format-v and component <money-format-v>
+// register directive v-money-format and component <money-format>
 Vue.use(moneyFormat, {precision: 2})
 ```
 
@@ -56,7 +56,7 @@ Vue.use(moneyFormat, {precision: 2})
 </template>
 
 <script>
-  import {VMoneyFormat} from 'v-money-format-v'
+  import { VMoneyFormat } from 'v-money-format-v'
 
   export default {
     data () {
