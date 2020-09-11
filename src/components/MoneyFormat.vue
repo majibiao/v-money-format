@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <input type="text"
     :value="formattedValue"
     @change="change"
@@ -8,8 +8,7 @@
 </template>
 
 <script>
-import moneyFormat from './directive'
-// import defaults from './options'
+import VMoneyFormat from '@/directives/VMoneyFormat'
 
 export default {
   name: 'Money-Format',
@@ -31,7 +30,7 @@ export default {
     }
   },
 
-  directives: { moneyFormat },
+  directives: { MoneyFormat: VMoneyFormat },
 
   data () {
     return {

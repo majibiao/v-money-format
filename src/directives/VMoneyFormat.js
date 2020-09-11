@@ -1,7 +1,14 @@
-import { moneyFormat } from './util'
-import options from './options'
+import { moneyFormat } from '@/libs/util'
+import options from '@/libs/option'
 
 const money = (el, binding) => {
+  // 判断是否是input元素
+  var els = el.tagName.toLocaleUpperCase() === 'INPUT' ? el : (el.querySelector('input') ? el.querySelector('input') : null)
+  if (els) {
+    el = els
+  } else {
+    throw new Error('v-money-format requires 1 input')
+  }
   const opt = Object.assign({}, options, binding.value ? binding.value : {})
   const regStr = '/^$*+?.|'
   const inRegStr = regStr.includes(opt.thousands) ? (`\\${opt.thousands}`) : opt.thousands

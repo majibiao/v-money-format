@@ -1,6 +1,6 @@
-import MoneyFormat from './component.vue'
-import VMoneyFormat from './directive'
-import options from './options'
+import MoneyFormat from '@/components/MoneyFormat.vue'
+import VMoneyFormat from '@/directives/VMoneyFormat'
+import options from '@/libs/option'
 
 export {
   MoneyFormat,
@@ -10,7 +10,7 @@ export {
 
 function install (Vue, globalOptions) {
   if (globalOptions) {
-    Object.keys(globalOptions).map(function(key){
+    Object.keys(globalOptions).map(function (key) {
       options[key] = globalOptions[key]
     })
   }
